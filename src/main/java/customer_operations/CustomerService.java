@@ -15,6 +15,19 @@ public class CustomerService {
 		}
 		return false;
 	}
+	public CustomerPojo showCustomer(int cid) {
+
+	    return cd.showCustomer(cid);
+	}
+	public boolean updateCustomer(CustomerPojo cp) {
+
+	    return cd.updateCustomer(cp);
+	}
+	public boolean deleteCustomer(int id) {
+
+	    return cd.deleteCustomer(id);
+	}
+
 
 
 }
