@@ -1,33 +1,39 @@
 package customer_operations;
 
+import java.util.List;
+
 public class CustomerService {
 	customerDao cd;
 
 	public CustomerService() {
-		cd= new customerDao() ;
+
+		cd = new customerDao();
 	}
 
 	public boolean createCustomer(CustomerPojo cus) {
-//		validation
+
 		int rows = cd.insertCustomer(cus);
-		if(rows>0) {
+
+		if (rows > 0) {
+
 			return true;
 		}
+
 		return false;
 	}
-	public CustomerPojo showCustomer(int cid) {
 
-	    return cd.showCustomer(cid);
+	public List<CustomerPojo> showCustomer() {
+
+		return cd.showCustomer();
 	}
+
 	public boolean updateCustomer(CustomerPojo cp) {
 
-	    return cd.updateCustomer(cp);
+		return cd.updateCustomer(cp);
 	}
+
 	public boolean deleteCustomer(int id) {
 
-	    return cd.deleteCustomer(id);
+		return cd.deleteCustomer(id);
 	}
-
-
-
 }
